@@ -1,11 +1,16 @@
 <?php
 
+require('vendor/autoload.php');
 
-$request = new \GuzzleHttp\Psr7\Request('GET', 'http://dog.ceo//api/breeds/image/randomg');
-$promise = $client->sendAsync($request)->then(function ($response) {
-    echo 'I completed! ' . $response->getBody();
-});
-$promise->wait();
+$c = new \GuzzleHttp\Client();
+
+
+$res = $c->request('GET','https://dog.ceo/api/breeds/list');
+
+
+echo $res->getStatusCode();
+echo $res->getBody();
+echo "\n";
 
 
 ?>

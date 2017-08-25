@@ -6,3 +6,5 @@ $m = new Mustache_Engine([
 echo $m->render('index', [
     'name' => 'World'
 ]); 
+
+?>
